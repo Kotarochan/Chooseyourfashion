@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Vizuar Printing shirt</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="shortcut icon" type="image/png" href="img/logo.png">
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="css/style2.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="js/javascript.js"></script>
+</head>
+<body>
+
+<!-- WRAPPER DIV STARTS HERE -->
+<div class="wrapper">
+
+<!-- NAVBAR -->
+	<div class="navbar">
+		<div class="logo"><img src="img/logo.png"></div>
+		<div class="brand"><a href="index.php">Vizuar Clothing</a></div>
+		<div class="links">
+			<ul>
+				<li><a class="active" href="index.html">Home</a></li>
+	 			<li><a href="design.html" id="focus">Design</a></li>
+	 			<li><a href="#" class="toggle-about">About <i class="fas fa-caret-down"></i></a>
+	 				<ul class="dropdown">
+	 					<li><a href="https://www.facebook.com/Vizuar/">Facebook/Vizuar</a></li>
+	 					<li><a href="https://www.instagram.com/vizuarclothing/">Instagram/VisuarClothing</a></li>
+	 					<li><a href="https://twitter.com/VizuarClothing">Twitter/VisuarClothing</a></li>
+	 				</ul>
+	 			</li>
+	 		</ul>
+	 	</div>
+	 	<div class="menu">
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+		</div>
+		<div class="buttons">
+			<ul>
+	 			<li><a class="btn btn-login" href="#" id="toggle-login-panel">Login</a></li>
+	 			<li><a class="btn btn-register" href="#" id="toggle-register-panel">Register</a></li>
+			</ul>
+		</div>
+	</div>
+<!-- NAVBAR ENDS HERE -->
+
+<!-- LOGIN AND REGISTER PANEL -->
+	<div class="panel-container">
+		<div class="panel login-panel">
+			<form method="POST" action="signin.php">
+			<span class="close" id="close-login">&times;</span>
+				<h4>Login | Vizuar</h4>
+			 	<ul>
+			 		<li><input type="text" name="username" id="username" placeholder="Username"></li>
+			 	 	<li><input type="password"  name="password" id="password" placeholder="Password"></li>
+			 	 	<li><input type="submit" name="signin" value="Login"></li>
+				</ul>
+			</form>
+		</div>
+	</div>
+	<div class="panel-container">
+		<div class="panel reg-panel">
+			<form method="POST" action="signin.php">
+			<span class="close" id="close-reg">&times;</span>
+				<h4>Register | Vizuar</h4>
+			 	<ul>
+			 		<li><input type="text" name="username" id="username" placeholder="Username"></li>
+			 		<li><input type="text" name="email" id="email" placeholder="Email"></li>
+			 		 <li><input type="password" name="password" id="password" placeholder="Password"></li>
+			 		 <li><input type="submit" name="signup" value="Register"></li>
+			 	</ul>
+			</form>
+		</div>
+	</div>
+<!-- LOGIN AND REGISTER PANEL ENDS HERE -->
+
+<!-- BANNER -->
+	<div class="header">
+		<div class="banner">
+			<div class="container">
+				<h1><span>Welcome to </span>Vizuar Printing Shirt</h1>
+				<p>Choose your own fashion</p>
+				<div class="mobile-button">
+					<button type="button" class="login-btn btn" id="toggle-login-panel-mobile">Login</button>
+					<button type="button" class="reg-btn btn" id="toggle-register-panel-mobile">Register</button>	
+				</div>
+			</div>
+		</div>
+	</div>
+<!-- BANNER ENDS HERE -->
+
+<!-- TIPS FOR BIGGER IMAGE -->
+<div class="hover-tips">
+	<div class="tips">
+		<i class="fas fa-question"></i>
+	</div>
+	<div class="tips-container">
+		<div class="tips-text" id="hide-tips">You can click the image to Zoom in</div>
+	</div>
+</div>
+<!-- TIPS ENDS HERE -->
+
+<!-- BIGGER IMAGE -->
+	<div class="bigger">
+		<span class="close-bigger">&times;</span>
+		<img src="">
+	</div>
+<!-- BIGGER IMAGE ENDS HERE -->
+	
+<!-- GALLERY STARTS HERE -->
+	<div class="gallery">
+		<a href="img/img1.jpg" target="bigger"><img src="img/img1.jpg"></a>
+		<a href="img/img2.jpg" target="bigger"><img src="img/img2.jpg"></a>
+		<a href="img/img3.jpg" target="bigger"><img src="img/img3.jpg"></a>
+		<a href="img/img4.jpg" target="bigger"><img src="img/img4.jpg"></a>
+	</div>
+<!-- GALLERY ENDS HERE -->
+
+<!-- SCRIPT FOR ZOOM IMAGE -->
+	<script>
+		$(document).ready(function(){
+			$('.gallery a').click(function(e){
+				e.preventDefault();
+				$('.bigger img').attr("src", $(this).attr("href"));
+			})
+		})
+	</script>
+<!-- END OF SCRIPT FOR ZOOM IMAGE -->
+
+<!-- FOOTER STARTS HERE -->
+	<div class="footer">
+		<h3>&copy; All Right Reserved 2018</h3>
+	</div>
+<!-- FOOTER ENDS HERE -->
+
+</div><!-- END OF WRAPPER DIV -->
+
+<!--<div class="modal fade" role="dialog" id="success">
+	 <div class="modal-dialog">
+	 	<div class="modal-content">
+	 		 <div class="modal-header">
+	 		 	<button class="close" data-dismiss="modal">&times;</button>
+	 		 	<h2>Registration Success!!</h2>
+	 		 </div>
+	 		 <div class="modal-body">
+	 		 	<form method="POST" action="signup.php">
+	 		 		<p>You may now login</p>
+	 		 	</form>
+	 		 </div>
+	 		 <div class="modal-footer">
+	 		 	<button class="btn btn-danger" data-dismiss="modal">Close</button>
+	 		 </div>
+	 	</div>
+	 </div>
+</div>-->
+
+<!-- 	<script>
+		$(document).ready(function() {
+
+			// script for responsive menu bar
+			$('.menu').click(function(){
+				$('.menu').toggleClass('active');
+				$('.links').toggleClass('active-2');
+			})
+
+			// script to toggle login sidebar
+			$('#toggle-login-panel').click(function(){
+				$('.login-panel').toggleClass('panel-active');
+			})
+
+			// script to toggle register sidebar
+			$('#toggle-register-panel').click(function(){
+				$('.reg-panel').toggleClass('panel-active');
+			})
+
+			// script to toggle login sidebar for mobile
+			$('#toggle-login-panel-mobile').click(function(){
+				$('.login-panel').toggleClass('panel-active');
+			})
+
+			// script to toggle register sidebar for mobile
+			$('#toggle-register-panel-mobile').click(function(){
+				$('.reg-panel').toggleClass('panel-active');
+			})
+
+			// script to close login sidebar on mobile
+			$('#close-login').click(function(){
+				$('.login-panel').toggleClass('panel-active');
+			})
+
+			// script to close reg sidebar on mobile
+			$('#close-reg').click(function(){
+				$('.reg-panel').toggleClass('panel-active');
+			})
+
+			// script to toggle about us dropdown menu
+			$('.toggle-about').click(function(){
+				$('.dropdown').slideToggle(200);
+			})
+
+			// script to toggle Zoom Image when clicked
+			$('.gallery img').click(function(){
+				$('.bigger').toggleClass('bigger-active');
+			})
+
+			// script to close Zoom Image
+			$('.close-bigger').click(function() {
+				$('.bigger').toggleClass('bigger-active');
+			})
+
+		})
+	</script> -->
+
+	<!-- script to toggle TIPS on page load -->
+	<script>
+		$(window).on('load', function() {
+			$('.tips-text').toggleClass('tips-text-active');
+		})
+	</script>
+
+	<!-- script to toggle TIPS time interval of appearance -->
+	<script>
+			var load;
+
+			// invoke myFunction() on page load
+			document.addEventListener("DOMContentLoaded", function() {
+		 	 myFunction();
+			});
+
+			// time interval for TIPS appearance
+			function myFunction() {
+				load = setInterval(loadFunction, 8000);
+			}
+
+			// function to toggle TIPS
+			function loadFunction() {
+				jQuery('.tips-text').toggleClass('tips-text-active');	
+			}
+	</script>
+
+
+</body>
+</html>
